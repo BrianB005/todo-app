@@ -35,12 +35,15 @@ const ListItem = ({
       <Buttons>
         <CheckIcon onClick={handleCheck}>
           <AiFillCheckCircle />
+          <h6>Check</h6>
         </CheckIcon>
         <EditButton onClick={handleEdit}>
           <FaEdit />
+          <h6>Edit</h6>
         </EditButton>
         <DeleteIcon onClick={handleClick}>
           <FaTrash />
+          <h6>Delete</h6>
         </DeleteIcon>
       </Buttons>
     </Wrapper>
@@ -87,8 +90,18 @@ const DeleteIcon = styled.button`
   color: red;
   background: transparent;
   transition: all 0.5s linear;
+  position: relative;
+  left: -3px;
+  h6 {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+  }
   &:hover {
     opacity: 0.8;
+    h6 {
+      opacity: 1;
+    }
   }
 `;
 
@@ -98,12 +111,36 @@ const EditButton = styled.button`
   color: green;
   border: none;
   background: transparent;
+  position: relative;
+  left: -3px;
+  h6 {
+    position: absolute;
+    opacity: 0;
+  }
+  &:hover {
+    opacity: 0.8;
+    h6 {
+      opacity: 1;
+    }
+  }
 `;
 const CheckIcon = styled.button`
   cursor: pointer;
   font-size: 15px;
   color: green;
   border: none;
+  position: relative;
   background: transparent;
+  h6 {
+    position: absolute;
+    left: -3px;
+    opacity: 0;
+  }
+  &:hover {
+    opacity: 0.8;
+    h6 {
+      opacity: 1;
+    }
+  }
 `;
 export default ListItem;
